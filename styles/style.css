@@ -9,3 +9,8 @@
 .font-inter {
   font-family: "Inter", sans-serif;
 }
+
+/* banner section */
+.banner-section {
+  background: linear-gradient(180deg, #03071280, #03071200 100%), url('../images/banner.png');
+}
