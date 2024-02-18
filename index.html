@@ -269,7 +269,62 @@
           <div class="border-r border-r-d mx-7 border-dashed border-[#03071233] opacity-80"></div>
           <!-- booking form -->
           <div class="w-2/5">
-
+            <h2 class="font-raleway font-semibold text-2xl">Select Your Seat</h2>
+            <div class="border border-dashed border-[#03071233] my-6 opacity-50"></div>
+            <div class="p-8">
+              <div class="overflow-x-auto">
+                <table class="table">
+                  <!-- head -->
+                  <thead>
+                    <tr class="font-medium text-base text-secondary-color">
+                      <th>Seat <sup class="bg-primary-color rounded-[5px] px-2 text-white">2</sup></th>
+                      <th>Class</th>
+                      <th>Price</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <!-- row 1 -->
+                    <tr>
+                      <td>C2</td> <td>Economy</td> <td>550</td>
+                    </tr>
+                    <!-- row 2 -->
+                    <tr>
+                      <td>C2</td> <td>Economy</td> <td>550</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="border border-[#03071233] my-6 opacity-50"></div>
+              <!-- total price -->
+              <div class="flex justify-between text-lg font-semibold text-secondary-color">
+                <span>Total Price</span>
+                <span>BDT <span>1100</span></span>
+              </div>
+              <div class="flex gap-2 p-2 mt-4 mb-6">
+                <input type="text" placeholder="Have any coupon?" class="input flex-1" /> 
+                <button class="btn bg-primary-color w-20 text-white font-semibold">Apply</button>
+              </div>
+              <!-- grand total -->
+              <div class="flex justify-between text-lg font-semibold text-secondary-color">
+                <span>Grand Total</span>
+                <span>BDT <span>1100</span></span>
+              </div>
+            </div>
+            <div>
+              <form action="">
+                <label for="passenger-name" class="block font-semibold my-4">Passenger Name*</label>
+                <input id="passenger-name" type="text" placeholder="Enter your name" class="input input-bordered w-full"/>
+                <label for="phone-number" class="block font-semibold my-4">Phone Number*</label>
+                <input id="phone-number" type="text" placeholder="Enter your phone number" class="input input-bordered w-full"/>
+                <label for="email-id" class="block font-semibold my-4">Email ID</label>
+                <input id="email-id" type="text" placeholder="Enter your email id" class="input input-bordered w-full"/>
+                <input type="submit" value="Next" class="btn bg-primary-color text-white w-full my-6" />
+              </form>
+              <div class="flex justify-around">
+                <a href="" class="opacity-60 underline">Terms and Conditions</a>
+                <a href="" class="opacity-60 underline">Cancellation Policy</a>
+              </div>
+            </div>
           </div>
         </section>
       </div>
