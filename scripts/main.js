@@ -6,6 +6,7 @@ const couponCodes = ['NEW15', 'Couple 20'];
 const applyCouponBtn = document.getElementById('apply-coupon');
 let bookedSeats = 0;
 let discountPercentage = 0;
+let discountPrice = 0;
 
 // event handlers
 for (const seat of seats) {
@@ -15,7 +16,7 @@ applyCouponBtn.addEventListener('click', handleApplyCouponBtn);
 
 // seat selection handler
 function handleSeatSelection(event) {
-  
+
   // prevent selecting more than four tickets at once
   if (bookedSeats >= 4) {
     return alert('Can not buy more than four tickets at once');
@@ -47,20 +48,31 @@ function handleSeatSelection(event) {
 function handleApplyCouponBtn(event) {
   const couponInput = document.getElementById('coupon-input');
   const couponInputValue = couponInput.value;
+
+  // check whether coupon code is valid or not
   if (couponCodes.includes(couponInputValue)) {
+    // set discount percentage
     if (couponInputValue === 'NEW15') {
       discountPercentage = 0.15;
     } else if (couponInputValue === 'Couple 20') {
       discountPercentage = 0.20;
     }
     
+    // update grand price
     const totalPrice = countTotalPrice();
     const grandPrice = countGrandPrice(totalPrice);
     setPriceById('grand-total', grandPrice);
 
+    // hide apply coupon area
     event.target.parentNode.classList.add('hidden');
+
+    // show discount price
+    setPriceById('discount-price', discountPrice);
+    const discountPriceArea = document.getElementById('discount-price-area');
+    discountPriceArea.classList.remove('hidden');
+    discountPriceArea.classList.add('flex');
   } else {
-    alert('Invalid coupon!')
+    alert('Invalid coupon!');
   }
 }
 
@@ -104,15 +116,15 @@ function countBookedSeats() {
 function countTotalPrice() {
   const totalPrice = bookedSeats * 550;
 
-  return totalPrice
+  return totalPrice;
 }
 
 // count grand price
 function countGrandPrice(totalPrice) {
   let grandTotal = 0;
-  discount = totalPrice * discountPercentage;
-  if (discount) {
-    grandTotal = totalPrice - discount;
+  discountPrice = totalPrice * discountPercentage;
+  if (discountPrice) {
+    grandTotal = totalPrice - discountPrice;
   } else {
     grandTotal = totalPrice;
   }
