@@ -28,7 +28,7 @@
 <body>
   <!-- header start -->
   <header class="container mx-auto px-4">
-    <nav class="font-raleway text-secondary-color">
+    <nav class="font-raleway text-secondary-color mt-4 mb-8">
       <div class="navbar">
         <div class="navbar-start">
           <div class="dropdown">
@@ -84,7 +84,8 @@
               Yes, you can run unit tests and view the results directly within the app. The integrated testing features
               allow for a streamlined.
             </p>
-            <button class="btn bg-primary-color text-xl font-bold text-secondary-color h-auto border-none p-5 lg:px-8 lg:py-5">Buy
+            <button
+              class="btn bg-primary-color text-xl font-bold text-secondary-color h-auto border-none p-5 lg:px-8 lg:py-5">Buy
               Tickets</button>
           </div>
         </div>
@@ -121,7 +122,7 @@
   <!-- header end -->
 
   <!-- main start -->
-  <main class="mt-48 mb-40 ">
+  <main class="mt-48 mb-40">
     <!-- best offer section -->
     <section class="container mx-auto px-4">
       <h2 class="text-4xl text-secondary-color text-center font-bold font-raleway">Best offers for you</h2>
@@ -158,6 +159,64 @@
         <button class="btn text-xl font-bold text-primary-color border border-[#1dd10066] px-7 mt-3">
           <a>See All Offers</a>
         </button>
+      </div>
+    </section>
+    <!-- ticket section -->
+    <section
+      class="border-t-2 border-[#1DD100] rounded-t-3xl md:rounded-t-[40px] lg:rounded-t-[88px] mt-12 md:mt-20 lg:mt-30">
+      <div class="container mx-auto px-4">
+        <!-- ticket info section -->
+        <section class="mt-12 md:mt-20 lg:mt-30">
+          <h2 class="text-4xl text-secondary-color text-center font-bold font-raleway">Bengal Express</h2>
+          <p class="mx-auto my-6 text-lg text-center text-secondary-color opacity-60 font-inter max-w-2xl">
+            Yes, you can run unit tests and view the results directly within the app. The integrated testing features
+            allow for a streamlined .
+          </p>
+          <div class="flex gap-6 items-center">
+            <!-- ticket details -->
+            <div class="flex-1 p-8">
+              <div class="flex justify-between">
+                <div class="flex items-center gap-3">
+                  <img class="py-3" src="./images/bus-logo.png" alt="bus logo">
+                  <div class="text-secondary-color">
+                    <h2 class="text-3xl font-bold font-raleway">Bengal Express</h2>
+                    <p class="text-lg font-inter opacity-60">Coach-009-WEB ! AC_Business</p>
+                  </div>
+                </div>
+                <button class="btn text-lg font-medium font-inter text-primary-color bg-[#1dd1001a] px-4">
+                  <img src="./images/seat-green.png" alt="Bus icon">
+                  <span>40 Seats left</span>
+                </button>
+              </div>
+              <div class="mt-6 p-8">
+                <div class="flex justify-between text-lg font-semibold font-raleway text-secondary-color">
+                  <span class="opacity-60">Route</span>
+                  <span>Dhaka - Sylhet</span>
+                </div>
+                <div class="border border-dashed border-[#03071233] my-8"></div>
+                <div class="flex justify-between text-lg font-semibold font-raleway text-secondary-color">
+                  <span class="opacity-60">Departure Time</span>
+                  <span>9:00 PM</span>
+                </div>
+                <div class="border border-dashed border-[#03071233] my-8"></div>
+                <div class="flex justify-between font-inter font-medium text-secondary-color opacity-80">
+                  <div class="rounded-xl bg-[#0307121a] p-4">Boarding Point - Laxmipur</div>
+                  <div class="rounded-xl bg-[#0307121a] p-4">Dropping Point - Bogura</div>
+                  <div class="rounded-xl bg-[#0307121a] p-4">Est. Time - 11 Hour</div>
+                </div>
+              </div>
+            </div>
+            <img class="border border-dashed border-[#03071233] h-full " src="./images/info-devider.png" alt="divider">
+            <!-- ticket price -->
+            <div class="w-1/5">
+              <div class="text-center font-raleway space-y-2">
+                <img class="mx-auto" src="./images/fare.png" alt="fare">
+                <h3 class="font-bold text-3xl">550 Taka</h3>
+                <p class="font-semibold text-2xl opacity-60">Per Seat</p>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
     </section>
   </main>
