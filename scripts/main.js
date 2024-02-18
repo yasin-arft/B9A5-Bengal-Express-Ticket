@@ -3,6 +3,7 @@
 const seatNoContainer = document.getElementById('seat-no-container');
 const seats = seatNoContainer.children;
 const couponCodes = ['NEW15', 'Couple 20'];
+const applyCouponBtn = document.getElementById('apply-coupon');
 let bookedSeats = 0;
 let discountPercentage = 0;
 
@@ -10,10 +11,16 @@ let discountPercentage = 0;
 for (const seat of seats) {
   seat.addEventListener('click', handleSeatSelection);
 }
-document.getElementById('apply-coupon').addEventListener('click', handleApplyCouponBtn);
+applyCouponBtn.addEventListener('click', handleApplyCouponBtn);
 
 // seat selection handler
 function handleSeatSelection(event) {
+  
+  // prevent selecting more than four tickets at once
+  if (bookedSeats >= 4) {
+    return alert('Can not buy more than four tickets at once');
+  }
+
   const element = event.target;
 
   element.classList.add('active');
@@ -22,13 +29,22 @@ function handleSeatSelection(event) {
   addToBookingTable(element.innerText);
 
   const totalPrice = countTotalPrice();
-  const grandPrice = countGrandPrice(totalPrice);
   setPriceById('total-price', totalPrice);
+
+  const grandPrice = countGrandPrice(totalPrice);
   setPriceById('grand-total', grandPrice);
+
+  // enable apply coupon button
+  if (bookedSeats === 4) {
+    applyCouponBtn.removeAttribute('disabled');
+  }
+
+  // prevent selecting one ticket more than once
+  element.removeEventListener('click', handleSeatSelection);
 }
 
 // apply coupon handler
-function handleApplyCouponBtn() {
+function handleApplyCouponBtn(event) {
   const couponInput = document.getElementById('coupon-input');
   const couponInputValue = couponInput.value;
   if (couponCodes.includes(couponInputValue)) {
@@ -41,6 +57,8 @@ function handleApplyCouponBtn() {
     const totalPrice = countTotalPrice();
     const grandPrice = countGrandPrice(totalPrice);
     setPriceById('grand-total', grandPrice);
+
+    event.target.parentNode.classList.add('hidden');
   } else {
     alert('Invalid coupon!')
   }
