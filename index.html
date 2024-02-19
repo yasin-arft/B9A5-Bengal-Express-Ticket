@@ -174,11 +174,11 @@
             Yes, you can run unit tests and view the results directly within the app. The integrated testing features
             allow for a streamlined .
           </p>
-          <div class="flex gap-6 items-center">
+          <div class="flex flex-col lg:flex-row gap-6 items-center">
             <!-- ticket details -->
-            <div class="flex-1 p-8">
-              <div class="flex justify-between">
-                <div class="flex items-center gap-3">
+            <div class="flex-1 md:p-8 md:w-full">
+              <div class="flex flex-col md:flex-row gap-3 justify-between">
+                <div class="flex flex-col md:flex-row items-center gap-3">
                   <img class="py-3" src="./images/bus-logo.png" alt="bus logo">
                   <div class="text-secondary-color">
                     <h2 class="text-3xl font-bold font-raleway">Bengal Express</h2>
@@ -190,7 +190,7 @@
                   <span><span id="seat-left">40</span> Seats left</span>
                 </button>
               </div>
-              <div class="mt-6 p-8">
+              <div class="mt-6 lg:p-8">
                 <div class="flex justify-between text-lg font-semibold font-raleway text-secondary-color">
                   <span class="opacity-60">Route</span>
                   <span>Dhaka - Sylhet</span>
@@ -201,16 +201,16 @@
                   <span>9:00 PM</span>
                 </div>
                 <div class="border border-dashed border-[#03071233] my-6 opacity-50"></div>
-                <div class="flex justify-between font-inter font-medium text-secondary-color opacity-80">
+                <div class="flex flex-col lg:flex-row gap-4 justify-between font-inter font-medium text-secondary-color opacity-80">
                   <div class="rounded-xl bg-[#0307121a] p-4">Boarding Point - Laxmipur</div>
                   <div class="rounded-xl bg-[#0307121a] p-4">Dropping Point - Bogura</div>
                   <div class="rounded-xl bg-[#0307121a] p-4">Est. Time - 11 Hour</div>
                 </div>
               </div>
             </div>
-            <img class="border border-dashed border-[#03071233] h-full " src="./images/info-devider.png" alt="divider">
+            <img class="hidden lg:block border border-dashed border-[#03071233] h-full " src="./images/info-devider.png" alt="divider">
             <!-- ticket price -->
-            <div class="w-1/5">
+            <div class="lg:w-1/5">
               <div class="text-center font-raleway space-y-2">
                 <img class="mx-auto" src="./images/fare.png" alt="fare">
                 <h3 class="font-bold text-3xl">550 Taka</h3>
@@ -220,9 +220,9 @@
           </div>
         </section>
         <!-- seat booking section -->
-        <section class="flex font-inter text-seconday-color my-4 md:my-8 lg:my-12">
+        <section class="flex flex-col lg:flex-row font-inter text-seconday-color my-4 md:my-8 lg:my-12">
           <!-- seats -->
-          <div class="flex-1">
+          <div class="lg:flex-1">
             <div>
               <h2 class="font-raleway font-semibold text-2xl">Select Your Seat</h2>
               <div class="border border-dashed border-[#03071233] my-6 opacity-50"></div>
@@ -270,7 +270,7 @@
           </div>
           <div class="border-r border-r-d mx-7 border-dashed border-[#03071233] opacity-80"></div>
           <!-- booking form -->
-          <div class="w-2/5">
+          <div class="lg:w-2/5">
             <h2 class="font-raleway font-semibold text-2xl">Select Your Seat</h2>
             <div class="border border-dashed border-[#03071233] my-6 opacity-50"></div>
             <div class="p-8">
@@ -300,8 +300,8 @@
                 <span>(-) BDT <span id="discount-price">00</span></span>
               </div>
               <!-- coupon field -->
-              <div class="flex gap-2 p-2 mt-4 mb-6">
-                <input id="coupon-input" type="text" placeholder="Have any coupon?" class="input flex-1" /> 
+              <div class="flex flex-col  lg:flex-row gap-2 p-2 mt-4 mb-6">
+                <input id="coupon-input" type="text" placeholder="Have any coupon?" class="input md:flex-1 " /> 
                 <button id="apply-coupon" class="btn bg-primary-color w-20 text-white font-semibold" disabled>Apply</button>
               </div>
               <div class="border border-dashed border-[#03071233] my-6 opacity-50"></div>
