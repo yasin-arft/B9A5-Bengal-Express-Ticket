@@ -304,6 +304,7 @@
                 <input id="coupon-input" type="text" placeholder="Have any coupon?" class="input flex-1" /> 
                 <button id="apply-coupon" class="btn bg-primary-color w-20 text-white font-semibold" disabled>Apply</button>
               </div>
+              <div class="border border-dashed border-[#03071233] my-6 opacity-50"></div>
               <!-- grand total -->
               <div class="flex justify-between text-lg font-semibold text-secondary-color">
                 <span>Grand Total</span>
@@ -311,15 +312,32 @@
               </div>
             </div>
             <div>
-              <form action="">
+              <form>
                 <label for="passenger-name" class="block font-semibold my-4">Passenger Name*</label>
                 <input id="passenger-name" type="text" placeholder="Enter your name" class="input input-bordered w-full"/>
                 <label for="phone-number" class="block font-semibold my-4">Phone Number*</label>
-                <input id="phone-number" type="text" placeholder="Enter your phone number" class="input input-bordered w-full"/>
+                <input id="phone-number" type="number" placeholder="Enter your phone number" class="input input-bordered w-full"/>
                 <label for="email-id" class="block font-semibold my-4">Email ID</label>
-                <input id="email-id" type="text" placeholder="Enter your email id" class="input input-bordered w-full"/>
-                <input type="submit" value="Next" class="btn bg-primary-color text-white w-full my-6" disabled/>
+                <input id="email-id" type="email" placeholder="Enter your email id" class="input input-bordered w-full"/>
+                <input id="form-submit" type="submit" value="Next" class="btn bg-primary-color text-white w-full my-6" disabled/>
               </form>
+              <!-- modal -->
+              <div id="success-modal" class="fixed top-0 left-0 w-full h-full justify-center items-center bg-[#4a4a4a1a] hidden z-10">
+              <div class="flex flex-col items-center text-center bg-white text-[#4A4A4A] rounded-2xl p-10 max-w-max">
+                <img src="./images/success.png" alt="success">
+                <h3 class="font-bold text-lg uppercase text-[#27AE60] my-6">SUCCESS</h3>
+                <p class="font-medium pb-2">
+                  Thank you for Booking Our Bus Seats.
+                  <br>
+                  We are working hard to find the best service and deals for you.
+                </p>
+                <p class="font-light">
+                  Shortly you will find a confirmation in your email.
+                </p>
+                <button id="modal-continue-btn" class="btn bg-[#27AE60] text-white px-20 rounded-full mt-4">Continue</button>
+              </div>
+            </div>
+              <!-- terms and condition -->
               <div class="flex justify-around">
                 <a href="" class="opacity-60 underline">Terms and Conditions</a>
                 <a href="" class="opacity-60 underline">Cancellation Policy</a>

@@ -13,6 +13,11 @@ for (const seat of seats) {
   seat.addEventListener('click', handleSeatSelection);
 }
 applyCouponBtn.addEventListener('click', handleApplyCouponBtn);
+document.getElementById('phone-number').addEventListener('blur', handlePhoneNumberInput);
+document.getElementById('form-submit').addEventListener('click', handleFormSubmit);
+document.getElementById('modal-continue-btn').addEventListener('click', function() {
+  replaceClassById('success-modal', 'flex', 'hidden');
+});
 
 // seat selection handler
 function handleSeatSelection(event) {
@@ -57,7 +62,7 @@ function handleApplyCouponBtn(event) {
     } else if (couponInputValue === 'Couple 20') {
       discountPercentage = 0.20;
     }
-    
+
     // update grand price
     const totalPrice = countTotalPrice();
     const grandPrice = countGrandPrice(totalPrice);
@@ -68,11 +73,23 @@ function handleApplyCouponBtn(event) {
 
     // show discount price
     setPriceById('discount-price', discountPrice);
-    const discountPriceArea = document.getElementById('discount-price-area');
-    discountPriceArea.classList.remove('hidden');
-    discountPriceArea.classList.add('flex');
+    replaceClassById('discount-price-area', 'hidden', 'flex');
   } else {
     alert('Invalid coupon!');
+  }
+}
+
+// form submit handler
+function handleFormSubmit(event) {
+  event.preventDefault();
+  replaceClassById('success-modal', 'hidden', 'flex');
+}
+
+// phone number input handler
+function handlePhoneNumberInput(event) {
+  const value = parseInt(event.target.value);
+  if (typeof value === 'number' && bookedSeats > 0) {
+    document.getElementById('form-submit').removeAttribute('disabled');
   }
 }
 
@@ -136,3 +153,11 @@ function countGrandPrice(totalPrice) {
 function setPriceById(elementId, price) {
   document.getElementById(elementId).innerText = price;
 }
+
+// replace a class
+function replaceClassById(id, oldClass, newClass) {
+  const element = document.getElementById(id);
+  element.classList.remove(oldClass);
+  element.classList.add(newClass);
+}
+
