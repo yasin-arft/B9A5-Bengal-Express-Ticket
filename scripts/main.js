@@ -4,6 +4,7 @@ const seatNoContainer = document.getElementById('seat-no-container');
 const seats = seatNoContainer.children;
 const couponCodes = ['NEW15', 'Couple 20'];
 const applyCouponBtn = document.getElementById('apply-coupon');
+const formSubmitBtn = document.getElementById('form-submit');
 let bookedSeats = 0;
 let discountPercentage = 0;
 let discountPrice = 0;
@@ -14,7 +15,7 @@ for (const seat of seats) {
 }
 applyCouponBtn.addEventListener('click', handleApplyCouponBtn);
 document.getElementById('phone-number').addEventListener('blur', handlePhoneNumberInput);
-document.getElementById('form-submit').addEventListener('click', handleFormSubmit);
+formSubmitBtn.addEventListener('click', handleFormSubmit);
 document.getElementById('modal-continue-btn').addEventListener('click', function() {
   replaceClassById('success-modal', 'flex', 'hidden');
 });
@@ -88,8 +89,11 @@ function handleFormSubmit(event) {
 // phone number input handler
 function handlePhoneNumberInput(event) {
   const value = parseInt(event.target.value);
-  if (typeof value === 'number' && bookedSeats > 0) {
-    document.getElementById('form-submit').removeAttribute('disabled');
+  console.log(value);
+  if (typeof value === 'number' && bookedSeats > 0 && !isNaN(value)) {
+    formSubmitBtn.removeAttribute('disabled');
+  } else {
+    formSubmitBtn.setAttribute('disabled', 'true');
   }
 }
 
